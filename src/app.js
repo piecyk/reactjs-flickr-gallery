@@ -25,12 +25,14 @@ var controller = {
 
 controller.fetch({
     per_page: 30,
-    method : 'flickr.photos.search',
-    page:1,
-    text:'dom'
-}, function(ret) {
+    photoset_id: '72157642166374725',
+    method : 'flickr.photosets.getPhotos',
+    page:1
+}, function(ret) {    
+    console.log(ret.photoset.photo);
+    
     React.renderComponent(
-            <showResponse data={ret} />,
+            <showResponse data={ret.photoset.photo} />,
         document.getElementById('container')
     );
 });
@@ -46,14 +48,21 @@ var showResponse = React.createClass({
   }
 });
 
+var Img = React.createClass({
+  render: function() {
+      return (<li><img src={this.props.path} width="516" height="387" border="0" /></li>
+    );
+  }
+});
+
 var DataList = React.createClass({
   render: function() {
-    var obj = this.props.data;
-    return (
-      <div>
-        {obj}
-      </div>
-    );
+      var obj  = this.props.data.map(function (photo) {
+          var src = "http://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
+          console.log(src);
+          return <Img path={src}></Img>;
+      });
+      return(<ul>{obj}</ul>);
   }
 });
 
