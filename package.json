@@ -1,0 +1,31 @@
+{
+  "name": "reactjs-flickr-gallery",
+  "version": "0.0.0",
+  "description": "Prototype of react.js with backbone to get flickr gallery.",
+  "main": "gulpfile.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-connect": "~1.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/piecyk/reactjs-flickr-gallery.git"
+  },
+  "keywords": [
+      "react",
+      "flickr",
+      "gallery",
+      "backbone"
+  ],
+  "author": "Damian Pieczynski <damian.pieczynski@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vojtajina/react-with-di/issues"
+  },
+  "homepage": "https://github.com/piecyk/reactjs-flickr-gallery"
+}
